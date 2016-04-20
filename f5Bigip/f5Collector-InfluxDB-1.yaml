@@ -1,0 +1,39 @@
+INFLUXDB_SERVER: { 'IP' : '172.16.232.221', 'IPPort' : '8086', 'dbName' : 'posteDB'}
+
+BIGIP_LIST:
+  #- { 'hostname' : 'vAPM-MSP.milano.f5se.com', 'mainVersion' : '12', 'mgmtIpAddr' : '172.16.232.166', 'username' : 'admin', 'password' : 'admin' }
+  - { 'hostname' : 'bigip-edge.milano.f5se.com', 'mainVersion' : '12', 'mgmtIpAddr' : '10.10.10.100', 'username' : 'admin', 'password' : 'tamopiobove' }
+  #- { 'hostname' : 'vSWG.milano.f5se.com', 'mainVersion' : '12', 'mgmtIpAddr' : '10.10.10.31', 'username' : 'admin', 'password' : 'tamopiobove' }
+
+GET_VS_STATS : true
+MONITORED_VARIABLES:
+  - { 'variableName' : 'clientside.bitsIn', 'variableField' : 'value' }
+  - { 'variableName' : 'clientside.bitsOut', 'variableField' : 'value' }
+  - { 'variableName' : 'clientside.curConns', 'variableField' : 'value' }
+  - { 'variableName' : 'clientside.evictedConns', 'variableField' : 'value' }
+  - { 'variableName' : 'clientside.maxConns', 'variableField' : 'value' }
+  - { 'variableName' : 'clientside.pktsIn', 'variableField' : 'value' }
+  - { 'variableName' : 'clientside.pktsOut', 'variableField' : 'value' }
+  - { 'variableName' : 'clientside.totConns', 'variableField' : 'value' }
+  - { 'variableName' : 'fiveMinAvgUsageRatio', 'variableField' : 'value' }
+  - { 'variableName' : 'fiveSecAvgUsageRatio', 'variableField' : 'value' }
+  - { 'variableName' : 'oneMinAvgUsageRatio', 'variableField' : 'value' }
+  - { 'variableName' : 'status.availabilityState', 'variableField' : 'description' }
+  - { 'variableName' : 'status.enabledState', 'variableField' : 'description' }
+  - { 'variableName' : 'status.statusReason', 'variableField' : 'description' }
+  - { 'variableName' : 'totRequests', 'variableField' : 'value' }
+
+GET_POOL_STATS : true
+MONITORED_POOL_VARIABLES:
+  - { 'variableName' : 'activeMemberCnt', 'variableField' : 'value' }
+  - { 'variableName' : 'serverside.bitsIn', 'variableField' : 'value' }
+  - { 'variableName' : 'serverside.bitsOut', 'variableField' : 'value' }
+  - { 'variableName' : 'serverside.curConns', 'variableField' : 'value' }
+  - { 'variableName' : 'serverside.maxConns', 'variableField' : 'value' }
+  - { 'variableName' : 'serverside.pktsIn', 'variableField' : 'value' }
+  - { 'variableName' : 'serverside.pktsOut', 'variableField' : 'value' }
+  - { 'variableName' : 'serverside.totConns', 'variableField' : 'value' }
+  - { 'variableName' : 'status.availabilityState', 'variableField' : 'description' }
+  - { 'variableName' : 'status.enabledState', 'variableField' : 'description' }
+  - { 'variableName' : 'status.statusReason', 'variableField' : 'description' }
+  - { 'variableName' : 'totRequests', 'variableField' : 'value' }
